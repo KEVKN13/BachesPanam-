@@ -40,7 +40,36 @@ function renderLayout({ preheader, title, body, footer }) {
   </div>`
 }
 
+async function sendWithResend({ to, subject, text, html }) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.resendApiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: env.mailFrom,
+      to,
+      subject,
+      html,
+      text,
+    }),
+  })
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => '')
+    throw new Error(`Resend ${response.status}: ${body}`)
+  }
+
+  return { delivered: true }
+}
+
 async function sendMail({ to, subject, text, html, logLabel }) {
+  if (env.resendApiKey) {
+    await sendWithResend({ to, subject, text, html })
+    return { delivered: true }
+  }
+
   const activeTransport = getTransport()
 
   if (!activeTransport) {

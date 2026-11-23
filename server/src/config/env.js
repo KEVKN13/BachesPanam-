@@ -13,6 +13,7 @@ const env = {
   smtpPort: Number(process.env.SMTP_PORT) || 587,
   smtpUser: process.env.SMTP_USER || '',
   smtpPassword: process.env.SMTP_PASSWORD || '',
+  resendApiKey: process.env.RESEND_API_KEY || '',
   mailFrom: process.env.MAIL_FROM || process.env.SMTP_USER || 'Baches Panamá <noreply@baches.local>',
   otpMinutes: Number(process.env.OTP_EXPIRES_MINUTES) || 10,
   otpResendSeconds: Number(process.env.OTP_RESEND_SECONDS) || 60,

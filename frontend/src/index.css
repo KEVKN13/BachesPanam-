@@ -1,0 +1,127 @@
+:root {
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  color: #134e4a;
+  background: #f0fdfa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #f0fdfa;
+  --surface: #ffffff;
+  --surface-alt: #ecfdf5;
+  --text: #134e4a;
+  --muted: #5f8f8a;
+  --muted-light: #99f6e4;
+  --border: #ccfbf1;
+  --border-strong: #99f6e4;
+
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-soft: #ccfbf1;
+  --primary-text: #115e59;
+  --primary-contrast: #ffffff;
+
+  --topbar-start: #042f2e;
+  --topbar-end: #0f766e;
+  --topbar-text: #f0fdfa;
+  --surface-dark: #042f2e;
+  --dark-contrast: #f0fdfa;
+
+  --shadow: rgba(6, 78, 59, 0.18);
+  --overlay: rgba(6, 78, 59, 0.6);
+  --pin-border: #ffffff;
+
+  --success: #059669;
+  --success-soft: #d1fae5;
+  --warning-soft: #fef3c7;
+  --warning-text: #b45309;
+  --info-soft: #cffafe;
+  --info-text: #0e7490;
+  --danger-soft: #fff1f2;
+  --danger-text: #be123c;
+  --danger-border: #fecdd3;
+
+  --sev-bajo: #10b981;
+  --sev-medio: #f59e0b;
+  --sev-alto: #f43f5e;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #042f2e;
+  --surface: #0f3d3a;
+  --surface-alt: #0a3230;
+  --text: #e2f5f1;
+  --muted: #8ab8b3;
+  --muted-light: #8ab8b3;
+  --border: #155e57;
+  --border-strong: #2a7a72;
+
+  --primary: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-soft: #115e59;
+  --primary-text: #99f6e4;
+  --primary-contrast: #042f2e;
+
+  --topbar-start: #022b29;
+  --topbar-end: #0b4a45;
+  --topbar-text: #e2f5f1;
+  --surface-dark: #011f1e;
+  --dark-contrast: #e2f5f1;
+
+  --shadow: rgba(0, 0, 0, 0.48);
+  --overlay: rgba(1, 31, 30, 0.8);
+
+  --success: #34d399;
+  --success-soft: #064e3b;
+  --warning-soft: #78350f;
+  --warning-text: #fde68a;
+  --info-soft: #164e63;
+  --info-text: #a5f3fc;
+  --danger-soft: #881337;
+  --danger-text: #fecdd3;
+  --danger-border: #9f1239;
+
+  --sev-bajo: #34d399;
+  --sev-medio: #fbbf24;
+  --sev-alto: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary);
+}

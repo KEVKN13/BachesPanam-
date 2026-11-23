@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografía - Arquitectura Full Stack (React + Node + MongoDB)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f2f5ff;
+    color: #1e293b;
+    padding: 24px;
+  }
+  .hoja {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(30, 41, 59, .18);
+    overflow: hidden;
+  }
+  header {
+    background: linear-gradient(135deg, #0f172a, #334155, #475569);
+    color: #fff;
+    padding: 36px 40px;
+    text-align: center;
+  }
+  header h1 { font-size: 32px; letter-spacing: .5px; }
+  header p { opacity: .9; margin-top: 10px; font-size: 15px; }
+  .stack-badges { margin-top: 16px; }
+  .stack-badges .chip {
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .seccion { padding: 30px 40px; border-bottom: 2px dashed #e2e8f0; }
+  .seccion:last-child { border-bottom: none; }
+  h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .azul h2 { color: #0b6ecb; }
+  .negro h2 { color: #0f172a; }
+  .verde h2 { color: #059669; }
+  h2::before {
+    content: '';
+    width: 14px; height: 14px;
+    border-radius: 4px;
+    background: currentColor;
+  }
+  .grid { display: grid; gap: 14px; }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #0b6ecb;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .card h3 { font-size: 15px; margin-bottom: 6px; }
+  .azul .card h3 { color: #0b6ecb; }
+  .negro .card h3 { color: #0f172a; }
+  .verde .card h3 { color: #059669; }
+  .card p { font-size: 13px; line-height: 1.5; color: #475569; }
+  .card.destacado { border-width: 2px; background: #fff; box-shadow: 0 4px 14px rgba(30,41,59,.08); }
+  ul { padding-left: 20px; }
+  li { font-size: 13.5px; line-height: 1.65; }
+  .flujo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    border-radius: 12px;
+    padding: 20px 16px;
+    margin-bottom: 16px;
+  }
+  .nodo {
+    background: #fff;
+    border: 2px solid #0b6ecb;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 120px;
+  }
+  .nodo.verde { border-color: #059669; color: #065f46; }
+  .nodo.negro { border-color: #0f172a; color: #0f172a; }
+  .nodo span { display: block; font-weight: 400; color: #64748b; font-size: 12px; margin-top: 4px; }
+  .flecha { font-size: 20px; color: #0b6ecb; font-weight: 700; }
+  .nota {
+    font-size: 12.5px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #065f46;
+    margin-top: 14px;
+  }
+  .peligro {
+    background: #fef3c7;
+    border-color: #fde68a;
+    color: #92400e;
+  }
+  .chip {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    margin: 3px 3px 0 0;
+    font-weight: 600;
+  }
+  .chip.verde { background: #d1fae5; color: #065f46; }
+  .chip.negro { background: #e2e8f0; color: #0f172a; }
+  footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 24px 40px;
+    font-size: 13.5px;
+    text-align: center;
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .hoja { box-shadow: none; border-radius: 0; }
+    .seccion { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <h1>Arquitectura Full Stack con nuestro Stack</h1>
+    <p>React + Node.js + Express + MongoDB, aplicados al proyecto "Reporte de Baches en Panamá"</p>
+    <div class="stack-badges">
+      <span class="chip">React</span>
+      <span class="chip">Vite</span>
+      <span class="chip">Node.js</span>
+      <span class="chip">Express</span>
+      <span class="chip">MongoDB</span>
+      <span class="chip">Mongoose</span>
+    </div>
+  </header>
+
+  <section class="seccion azul">
+    <h2>Características de este desarrollo Full Stack</h2>
+    <div class="grid g2">
+      <div class="card destacado"><h3>Una sola tecnología en todo</h3><p>React (frontend) y Node.js/Express (backend) usan JavaScript: un solo lenguaje en todo el proyecto.</p></div>
+      <div class="card"><h3>API REST + JSON</h3><p>El frontend pide datos al backend con GET, POST, PATCH y recibe respuestas en JSON.</p></div>
+      <div class="card"><h3>Base de datos flexible</h3><p>MongoDB (NoSQL) guarda reportes, usuarios y votos con esquemas que pueden evolucionar.</p></div>
+      <div class="card"><h3>Escalabilidad</h3><p>Capas separadas (rutas, controladores, modelos) que crecen sin rehacer el código.</p></div>
+      <div class="card"><h3>Seguridad</h3><p>Contraseñas con hash (bcrypt) y autenticación con tokens JWT.</p></div>
+      <div class="card"><h3>Funciona 100% en local</h3><p>Sin costos: MongoDB en tu PC, backend en localhost:5000 y frontend en localhost:5173.</p></div>
+    </div>
+  </section>
+
+  <section class="seccion azul">
+    <h2>Frontend - React (lo que ve el usuario)</h2>
+    <div class="grid g3">
+      <div class="card destacado"><h3>React + Vite</h3><p>Estructurado por componentes reutilizables. Vite lo hace rápido de arrancar y compilar.</p><span class="chip">JavaScript</span></div>
+      <div class="card"><h3>Leaflet + OpenStreetMap</h3><p>Mapa interactivo 100% gratuito para marcar cada bache.</p><span class="chip">Gratis</span></div>
+      <div class="card"><h3>Context API</h3><p>Estado global de la app: usuario logueado, token, lista de reportes.</p></div>
+      <div class="card"><h3>Axios</h3><p>Cliente HTTP que se comunica con la API del backend.</p><span class="chip">fetch</span></div>
+    </div>
+    <div class="nota">Todo esto convierte a React en la interfaz: formulario de reportes, mapa de baches, botones de voto y panel.</div>
+  </section>
+
+  <section class="seccion negro">
+    <h2>Backend - Node.js + Express (la lógica)</h2>
+    <div class="grid g3">
+      <div class="card destacado"><h3>Node.js + Express</h3><p>Servidor que recibe las peticiones HTTP y responde JSON.</p><span class="chip negro">API REST</span></div>
+      <div class="card"><h3>Rutas y controladores</h3><p>Organiza cada endpoint: /api/auth y /api/reports.</p></div>
+      <div class="card"><h3>JWT + bcrypt</h3><p>Login seguro y protección de rutas con token.</p></div>
+      <div class="card"><h3>Multer</h3><p>Sube fotos de los baches al servidor local.</p></div>
+    </div>
+    <div class="nota">El backend es el GUARDAN: nadie accede a la base de datos sin pasar por la API.</div>
+  </section>
+
+  <section class="seccion verde">
+    <h2>Base de Datos - MongoDB (lo que se guarda)</h2>
+    <div class="grid g3">
+      <div class="card destacado"><h3>Colección User</h3><p>nombre, email, passwordHash, rol (ciudadano/admin).</p></div>
+      <div class="card"><h3>Colección Report</h3><p>título, descripción, lat/lng, gravedad, foto, estado, votos.</p></div>
+      <div class="card"><h3>Mongoose (ODM)</h3><p>Define los modelos y valida los datos desde Node.js.</p></div>
+    </div>
+    <div class="nota">Los reportes se guardan con coordenadas (lat/lng) para dibujarlos en el mapa del frontend.</div>
+  </section>
+
+  <section class="seccion azul">
+    <h2>Cómo se integran las 3 partes</h2>
+    <div class="flujo">
+      <div class="nodo">React (frontend)<span>localhost:5173</span></div>
+      <div class="flecha">&rarr;</div>
+      <div class="nodo">HTTP + JSON<span>Axios · CORS · JWT</span></div>
+      <div class="flecha">&rarr;</div>
+      <div class="nodo negro">Express (backend)<span>localhost:5000</span></div>
+      <div class="flecha">&rarr;</div>
+      <div class="nodo verde">MongoDB<span>127.0.0.1:27017</span></div>
+      <div class="flecha">&larr;</div>
+      <div class="nodo verde">Respuesta JSON<span>reportes · datos</span></div>
+    </div>
+    <ul>
+      <li><b>Frontend</b> hace peticiones a <b>http://localhost:5000/api</b> con Axios y el token JWT.</li>
+      <li><b>Express</b> valida el token, consulta <b>MongoDB</b> con Mongoose y devuelve JSON.</li>
+      <li><b>React</b> dibuja esos datos en el mapa y en las listas de la interfaz.</li>
+      <li><b>CORS</b> autoriza que el frontend (5173) hable con el backend (5000).</li>
+    </ul>
+  </section>
+
+  <section class="seccion verde">
+    <h2>Tipo de desarrollo elegido: SPA con CSR</h2>
+    <div class="grid g2">
+      <div class="card destacado"><h3>SPA + CSR - La elegimos</h3><p>React renderiza todo en el navegador y pide datos al API. Perfecta porque nuestra app exige login y el SEO no es clave.</p><span class="chip verde">React</span><span class="chip verde">SPA</span></div>
+      <div class="card"><h3>SSR / SSG (futuro)</h3><p>Si algún día la app debe venderse bien en buscadores, migraríamos a Next.js sin cambiar MongoDB ni la API.</p></div>
+      <div class="card"><h3>PWA</h3><p>En una versión futura, instalar la app en el celular y avisar notificaciones.</p></div>
+    </div>
+    <div class="nota">Decisión según criterio: la app es privada y dinámica, así que el renderizado en el cliente (CSR) es el correcto.</div>
+  </section>
+
+  <footer>
+    React (interfaz) + Express (lógica) + MongoDB (datos) = nuestro proyecto Full Stack funcionando en local.
+  </footer>
+
+</div>
+</body>
+</html>

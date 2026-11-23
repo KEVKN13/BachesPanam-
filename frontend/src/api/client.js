@@ -9,7 +9,7 @@ const API_ORIGIN =
 
 export const api = axios.create({
   baseURL: API_URL,
-  timeout: 12000,
+  timeout: 30000,
 })
 
 const storedToken =
